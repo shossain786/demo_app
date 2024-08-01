@@ -19,11 +19,11 @@ class WelcomeScreen extends StatelessWidget {
             const SizedBox(height: 40),
             ElevatedButton.icon(
               onPressed: () {
-                Navigator.pushNamed(context, '/home',
+                Navigator.pushNamed(context, '/login',
                     arguments: {'name': 'Saddam'});
               },
               icon: const Icon(Icons.home),
-              label: const Text('Go to home'),
+              label: const Text('Go to Login'),
             )
           ],
         ),

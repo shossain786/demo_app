@@ -1,25 +1,22 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-class LoginState {}
+abstract class LoginState {}
 
-final class LoginInitial extends LoginState {}
+class LoginInitial extends LoginState {}
 
 class LoginFormValidState extends LoginState {}
 
 class LoginFormInValidState extends LoginState {
-  late String? userNameError;
-  late String? passwordError;
+  final String? userNameError;
+  final String? passwordError;
   LoginFormInValidState({
     this.userNameError,
     this.passwordError,
   });
 }
 
-class LoginFormLoadState extends LoginState {}
-
 class LoginFormSuccessState extends LoginState {
-  late String? successMessage;
+  final String successMessage;
   LoginFormSuccessState({
-    this.successMessage,
+    required this.successMessage,
   });
 }
 

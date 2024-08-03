@@ -36,9 +36,11 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ),
               style: const ButtonStyle(
-                  shadowColor: WidgetStatePropertyAll(Colors.amber),
-                  backgroundColor: WidgetStatePropertyAll(Colors.black)),
-            )
+                shadowColor: WidgetStatePropertyAll(Colors.amber),
+                backgroundColor:
+                    WidgetStatePropertyAll(Color.fromARGB(255, 24, 5, 56)),
+              ),
+            ),
           ],
         ),
       ),

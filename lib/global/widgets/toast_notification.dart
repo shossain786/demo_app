@@ -6,6 +6,7 @@ class ToastNotifierWidget {
     required String? message,
     required String? description,
   }) {
+    ScaffoldMessenger.of(context).clearSnackBars();
     return ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         duration: Durations.extralong3,
@@ -31,6 +32,7 @@ class ToastNotifierWidget {
     required String? message,
     required String? description,
   }) {
+    ScaffoldMessenger.of(context).clearSnackBars();
     return ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         duration: Durations.extralong3,

@@ -1,4 +1,4 @@
-// ignore_for_file: must_be_immutable
+// ignore_for_file: must_be_immutable, use_build_context_synchronously
 
 import 'package:demo_app/global/blocs/internet/internet_cubit.dart';
 import 'package:demo_app/global/blocs/internet/internet_state.dart';
@@ -126,7 +126,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         keyboardType: TextInputType.text,
                         inputFormatters: [
                           FilteringTextInputFormatter.allow(
-                              RegExp(r'[a-zA-Z0-9@#_]'))
+                              RegExp(r'[a-zA-Z0-9@#.-_]'))
                         ],
                         onChanged: (value) {
                           BlocProvider.of<LoginBloc>(context).add(
@@ -151,7 +151,15 @@ class _SignInScreenState extends State<SignInScreen> {
                             color: Colors.deepPurple,
                           ),
                           hintText: 'saddam@mail.com',
-                          // errorText: (state is LoginForm)
+                          // errorText: (state is LoginFormInValidState)
+                          //     ? state.userNameError
+                          //     : null,
+                          // errorBorder: OutlineInputBorder(
+                          //     borderSide: BorderSide(
+                          //   color: Colors.red,
+                          //   width: 2,
+                          // ),
+                          // ),
                         ),
                       ),
                     ),
@@ -206,8 +214,6 @@ class _SignInScreenState extends State<SignInScreen> {
                             fontWeight: FontWeight.w500,
                             color: Colors.deepPurple,
                           ),
-
-                          // errorText: (state is LoginForm)
                         ),
                       ),
                     ),

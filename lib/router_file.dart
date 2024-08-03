@@ -1,6 +1,6 @@
 import 'package:demo_app/error_screen.dart';
 import 'package:demo_app/screens/home/home_screen.dart';
-import 'package:demo_app/screens/login/signing_screen.dart';
+import 'package:demo_app/screens/login/login_screen.dart';
 import 'package:demo_app/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 

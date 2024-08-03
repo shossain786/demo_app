@@ -1,4 +1,7 @@
+import 'package:demo_app/global/internet_cubic.dart';
+import 'package:demo_app/screens/login/login_block/login_block.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'router_file.dart';
 
@@ -11,11 +14,17 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'My Demo APP',
-      initialRoute: '/',
-      onGenerateRoute: RouterClass.generateRoute,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => InternetCubic()),
+        BlocProvider(create: (context) => LoginBloc()),
+      ],
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'My Demo APP',
+        initialRoute: '/',
+        onGenerateRoute: RouterClass.generateRoute,
+      ),
     );
   }
 }

@@ -22,8 +22,22 @@ class WelcomeScreen extends StatelessWidget {
                 Navigator.pushNamed(context, '/login',
                     arguments: {'name': 'Saddam'});
               },
-              icon: const Icon(Icons.home),
-              label: const Text('Go to Login'),
+              icon: const Icon(
+                Icons.home,
+                color: Colors.white,
+              ),
+              label: const Text(
+                'Let\'s Go',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                  height: 3,
+                  color: Colors.white,
+                ),
+              ),
+              style: const ButtonStyle(
+                  shadowColor: WidgetStatePropertyAll(Colors.amber),
+                  backgroundColor: WidgetStatePropertyAll(Colors.black)),
             )
           ],
         ),

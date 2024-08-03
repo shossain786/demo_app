@@ -4,21 +4,21 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'internet_state.dart';
 
-class InternetCubic extends Cubit<InternetState> {
+class InternetCubit extends Cubit<InternetState> {
   final Connectivity _connectivity = Connectivity();
   StreamSubscription? _connectivitySubscription;
 
-  InternetCubic() : super(InternetState.internetInitial) {
+  InternetCubit() : super(InternetState.internetInitial) {
     _checkInternet();
     _connectivitySubscription = _connectivity.onConnectivityChanged.listen(
       (event) {
         if (event.contains(ConnectivityResult.mobile) ||
-          event.contains(ConnectivityResult.wifi) ||
-          event.contains(ConnectivityResult.vpn)) {
-        emit(InternetState.internetAvailable);
-      } else {
-        emit(InternetState.internetLost);
-      }
+            event.contains(ConnectivityResult.wifi) ||
+            event.contains(ConnectivityResult.vpn)) {
+          emit(InternetState.internetAvailable);
+        } else {
+          emit(InternetState.internetLost);
+        }
       },
     );
   }

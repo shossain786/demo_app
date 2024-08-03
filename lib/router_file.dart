@@ -25,11 +25,11 @@ class RouterClass {
       case '/login':
         if (args is Map<String, dynamic>) {
           return MaterialPageRoute(
-            builder: (context) => SigninScreen(arguments: args),
+            builder: (context) => SignInScreen(arguments: args),
           );
         }
         return MaterialPageRoute(
-          builder: (context) => SigninScreen(arguments: const {}),
+          builder: (context) => SignInScreen(arguments: const {}),
         );
       default:
         if (args is Map<String, dynamic>) {

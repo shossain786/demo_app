@@ -69,6 +69,13 @@ class _SigninScreenState extends State<SigninScreen> {
                         FilteringTextInputFormatter.allow(
                             RegExp(r'[a-zA-Z0-9@#_]'))
                       ],
+                      onChanged: (value) {
+                        BlocProvider.of<LoginBloc>(context).add(
+                          LoginTextChangeEvent(
+                              usernameValue: _usernameController.text,
+                              passwordValue: _passwordController.text),
+                        );
+                      },
                       decoration: const InputDecoration(
                         prefix: Icon(
                           Icons.person_sharp,
@@ -104,6 +111,13 @@ class _SigninScreenState extends State<SigninScreen> {
                         FilteringTextInputFormatter.allow(
                             RegExp(r'[a-zA-Z0-9@#_]'))
                       ],
+                      onChanged: (value) {
+                        BlocProvider.of<LoginBloc>(context).add(
+                          LoginTextChangeEvent(
+                              usernameValue: _usernameController.text,
+                              passwordValue: _passwordController.text),
+                        );
+                      },
                       decoration: InputDecoration(
                         prefix: const Icon(
                           Icons.password,

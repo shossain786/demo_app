@@ -135,31 +135,53 @@ class _SignInScreenState extends State<SignInScreen> {
                                 passwordValue: _passwordController.text),
                           );
                         },
-                        decoration: const InputDecoration(
-                          prefix: Icon(
+                        decoration: InputDecoration(
+                          prefix: const Icon(
                             Icons.person_sharp,
                             color: Colors.purple,
                           ),
                           prefixIconColor: Colors.purple,
                           labelText: 'Username/Email ID',
-                          labelStyle: TextStyle(
+                          labelStyle: const TextStyle(
                             fontWeight: FontWeight.w600,
                           ),
                           helperText: 'Please enter username/email id',
-                          helperStyle: TextStyle(
+                          helperStyle: const TextStyle(
                             fontWeight: FontWeight.w500,
                             color: Colors.deepPurple,
                           ),
                           hintText: 'saddam@mail.com',
-                          // errorText: (state is LoginFormInValidState)
-                          //     ? state.userNameError
-                          //     : null,
-                          // errorBorder: OutlineInputBorder(
-                          //     borderSide: BorderSide(
-                          //   color: Colors.red,
-                          //   width: 2,
-                          // ),
-                          // ),
+                          errorText: (state is LoginFormInValidState)
+                              ? state.userNameError
+                              : null,
+                          errorStyle: const TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 12),
+                          enabledBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.black,
+                              width: 2,
+                            ),
+                          ),
+                          disabledBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.black,
+                              width: 2,
+                            ),
+                          ),
+                          focusedBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.black,
+                              width: 2,
+                            ),
+                          ),
+                          border: const OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.black,
+                              width: 2,
+                            ),
+                          ),
                         ),
                       ),
                     ),
@@ -176,7 +198,8 @@ class _SignInScreenState extends State<SignInScreen> {
                         obscuringCharacter: '*',
                         inputFormatters: [
                           FilteringTextInputFormatter.allow(
-                              RegExp(r'[a-zA-Z0-9@#_]'))
+                            RegExp(r'[a-zA-Z0-9@#_]'),
+                          ),
                         ],
                         onChanged: (value) {
                           BlocProvider.of<LoginBloc>(context).add(
@@ -213,6 +236,44 @@ class _SignInScreenState extends State<SignInScreen> {
                           helperStyle: const TextStyle(
                             fontWeight: FontWeight.w500,
                             color: Colors.deepPurple,
+                          ),
+                          errorText: (state is LoginFormInValidState)
+                              ? state.passwordError
+                              : null,
+                          errorStyle: const TextStyle(
+                            color: Colors.red,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600,
+                          ),
+                          errorBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.red,
+                              width: 2,
+                            ),
+                          ),
+                          enabledBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.black,
+                              width: 2,
+                            ),
+                          ),
+                          disabledBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.black,
+                              width: 2,
+                            ),
+                          ),
+                          focusedBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.black,
+                              width: 2,
+                            ),
+                          ),
+                          border: const OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.black,
+                              width: 2,
+                            ),
                           ),
                         ),
                       ),

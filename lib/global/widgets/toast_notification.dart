@@ -12,6 +12,7 @@ class ToastNotifierWidget {
         duration: Durations.extralong3,
         behavior: SnackBarBehavior.floating,
         margin: const EdgeInsets.all(10),
+        backgroundColor: Colors.green,
         content: ListTile(
           visualDensity: const VisualDensity(vertical: -4, horizontal: 0),
           title: Text(
@@ -38,6 +39,7 @@ class ToastNotifierWidget {
         duration: Durations.extralong3,
         behavior: SnackBarBehavior.floating,
         margin: const EdgeInsets.all(10),
+        backgroundColor: Colors.red,
         content: ListTile(
           visualDensity: const VisualDensity(vertical: -4, horizontal: 0),
           title: Text(
